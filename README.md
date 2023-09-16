@@ -54,3 +54,42 @@
     - Se envía los eventos nativos con $event
 
 ### Data [(Biding)]
+
+dir -> app.module.ts -> Se incluye el paquete
+import { NgModule } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
+```
+    import { FormsModule } from '@angular/forms';
+
+
+    @NgModule({
+  declarations: [
+    AppComponent
+  ],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    FormsModule
+  ],
+  providers: [],
+  bootstrap: [AppComponent]
+})
+export class AppModule { }
+```
+
+## *ngIf
+```
+<p *ngIf="person.name == 'daniel' ">
+```
+se puede complicar la lógica dentro de las "" tanto como se requiera.
+```
+<h1>*ngIf</h1>
+<input type="text" [(ngModel)]="person.name">
+<p *ngIf="person.name == 'daniel'; else elseBlock">
+  Acertó.
+</p>
+<ng-template #elseBlock>
+  <p>Bloque else</p>
+</ng-template>
+
+```
