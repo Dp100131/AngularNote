@@ -143,3 +143,46 @@ export class ImgComponent {
   @Input() stringImg: string = "init value";
 }
 ```
+#Uso de Output
+Data flow Child to parent
+```
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+
+@Component({
+  selector: 'app-img',
+  templateUrl: './img.component.html',
+  styleUrls: ['./img.component.css']
+})
+export class ImgComponent {
+  @Input() stringImg: string = "init value";
+  @Output() loaded = new EventEmitter<string>();
+  imgDefault: string = '../../../assets/images/default.png';
+  imgError(){
+    this.stringImg = this.imgDefault;
+  }
+  loadImg(){
+    console.log('log hijo');
+    this.loaded.emit(this.stringImg);
+  }
+}
+```
+## Ciclo de vida de componentes
+
+### Constructor
+//before render
+// NO async -- once time
+
+### ngOnChanges
+// before render
+// changes inputs -> times
+
+### ngOnInit
+// before render
+// asyn - fetch -- once time
+
+### ngAfterViewInit
+//Afeter render
+// Handler children
+
+### ngOnDestroy
+// delete
