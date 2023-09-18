@@ -93,3 +93,33 @@ se puede complicar la lógica dentro de las "" tanto como se requiera.
 </ng-template>
 
 ```
+## *ngFor
+
+```
+<h1>*ngFor</h1>
+<ul>
+  <li *ngFor="let i of names">
+    {{i}}
+  </li>
+</ul>
+<hr>
+```
+
+## *ngSwitch
+
+```
+<div [ngSwitch]="color">
+    <p *ngSwitchCase="'azul'">
+        El color el Azul
+    </p>
+    <p *ngSwitchCase="'verde'">
+        El color el Verde
+    </p>
+    <p *ngSwitchCase="'rojo'">
+        El color el Rojo
+    </p>
+    <p *ngSwitchDefault>
+        No hay ningún color
+    </p>
+</div>
+```
