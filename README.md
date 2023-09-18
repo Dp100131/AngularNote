@@ -123,3 +123,23 @@ se puede complicar la lógica dentro de las "" tanto como se requiera.
     </p>
 </div>
 ```
+
+## Crear un componente en angular
+
+```
+ng g c COMPONENT_NAME
+```
+## Uso de inputs
+data flow parent to child
+```
+import { Component, OnInit, Input } from '@angular/core';
+
+@Component({
+  selector: 'app-img',
+  templateUrl: './img.component.html',
+  styleUrls: ['./img.component.css']
+})
+export class ImgComponent {
+  @Input() stringImg: string = "init value";
+}
+```
