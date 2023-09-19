@@ -175,6 +175,8 @@ export class ImgComponent {
 ### ngOnChanges
 // before render
 // changes inputs -> times
+### setInput
+// Buena opción para reemplzar el change.
 
 ### ngOnInit
 // before render
@@ -186,3 +188,27 @@ export class ImgComponent {
 
 ### ngOnDestroy
 // delete
+
+### Servicios
+
+ng g s RUTA
+
+### Angular Http
+/app.module
+```
+import { HttpClientModule } from '@angular/common/http';
+```
+/service
+```
+import { HttpClient } from '@angular/common/http';
+```
+
+### Pipeline
+ng g p RUTA
+
+### Directivas
+ng g d RUTA
+
+### linter de angular
+ng lint
+ng add @angular-eslint/schematics
