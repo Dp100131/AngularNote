@@ -202,7 +202,13 @@ import { HttpClientModule } from '@angular/common/http';
 ```
 import { HttpClient } from '@angular/common/http';
 ```
-
+/service
+```
+import { HttpParams } from '@angular/common/http';
+```
+HttpErrorResponse
+HttpStatusCode
+HttpHeaders
 ### Pipeline
 ng g p RUTA
 
@@ -212,3 +218,91 @@ ng g d RUTA
 ### linter de angular
 ng lint
 ng add @angular-eslint/schematics
+
+### Swiper
+
+
+### Data tranfer Object
+Omit 
+Partial -> hace todos los atributos opcionales
+
+### Observable vs Promise
+volver a ver la clase :v
+
+### Problema de cors
+hacer varias de origen diferente
+hacer que el backend habilite los host
+la solución presentada solo funciona para desarrollo
+
+
+### Router oulet:
+router-outlet -> todo lo que tiene que ver con router
+
+```
+<app-nav></app-nav>
+<router-outlet>
+  
+</router-outlet>
+```
+|_ app.routing.module
+```
+const routes: Routes = [
+  {
+    path: '',
+    component: HomeComponent
+  },
+  {
+    path: 'category',
+    component: CategoryComponent
+  },
+];
+```
+Para que el routing tenga parametros:
+```
+{
+  path: 'category/:id',
+  component: CategoryComponent
+},
+```
+template:
+```
+@Component({
+  selector: 'app-category',
+  template: '<app-products (LoadMore)="onLoadMore()" [products]="products"></app-products>',
+  styleUrls: ['./category.component.scss']
+})
+```
+### RouterLink y RouterActive
+
+#### Router link:
+
+```
+<li><a routerLink="home">All</a></li>
+```
+#### Router link Active para clases:
+```
+routerLinkActive="active"
+```
+
+### 404
+
+```
+{
+    path: '**',
+    component: NotFoundComponent,
+  },
+```
+### Go to back
+Se inyecta como un servicio.
+```
+import { Location } from '@angular/common';
+```
+### Parametros URLs
+
+
+### Lazy loading and coding spliting
+
+Chunk Files
+
+### QuickLink Strategy
+Revisar el curso en platzi.
